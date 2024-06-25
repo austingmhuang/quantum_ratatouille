@@ -77,7 +77,7 @@ export const useStore = create((set, get) => ({
       nodes: get().nodes.map((node) =>
         node.id === id
           ? { ...node, data: Object.assign(node.data, data) }
-          : node
+          : node,
       ),
     });
   },

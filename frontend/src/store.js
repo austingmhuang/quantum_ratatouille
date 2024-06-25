@@ -19,7 +19,7 @@ export const useStore = create((set, get) => ({
     {
       id: "mol",
       type: "mol",
-      data: { gain: 0.5 },
+      data: {},
       position: { x: -100, y: 200 },
     },
   ],
@@ -37,15 +37,15 @@ export const useStore = create((set, get) => ({
     });
   },
 
-  // updateNode(id, data) {
-  //   set({
-  //     nodes: get().nodes.map((node) =>
-  //       node.id === id
-  //         ? { ...node, data: Object.assign(node.data, data) }
-  //         : node,
-  //     ),
-  //   });
-  // },
+  updateNode(id, data) {
+    set({
+      nodes: get().nodes.map((node) =>
+        node.id === id
+          ? { ...node, data: Object.assign(node.data, data) }
+          : node,
+      ),
+    });
+  },
 
   onConnect: (connection) => {
     set({

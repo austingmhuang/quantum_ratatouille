@@ -5,19 +5,15 @@ import { tw } from "twind";
 import { useStore } from "../store";
 import { useDropzone } from "react-dropzone";
 
-// const selector = (id) => (store) => ({
-//   setGain: (e) => store.updateNode(id, { gain: +e.target.value }),
-// });
-
 export default function Mol({ id, data }) {
-  const { acceptedFiles, getRootProps, getInputProps } = useDropzone();
+  const updateNode = useStore((state) => state.updateNode);
+  const { getRootProps, getInputProps } = useDropzone({
+    noClick: true,
+    maxFiles: 1,
+    onDrop: (files) => updateNode(id, files),
+  });
 
-  const files = acceptedFiles.map((file) => (
-    <li key={file.path}>
-      {file.path} - {file.size} bytes
-    </li>
-  ));
-  // const { setGain } = useStore(selector(id), shallow);
+  console.log(data[0].path);
 
   return (
     <div className={tw("rounded-md bg-white shadow-xl")}>
@@ -34,6 +30,9 @@ export default function Mol({ id, data }) {
         >
           <input {...getInputProps()} />
           <p>Molecule.xyz</p>
+          <aside>
+            <p>{data[0].path}</p>
+          </aside>
         </div>
       </label>
 

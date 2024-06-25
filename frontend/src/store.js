@@ -53,4 +53,12 @@ export const useStore = create((set, get) => ({
   setEdges: (edges) => {
     set({ edges });
   },
+
+  createNode: (type) => {
+    const id = nanoid();
+    const data = { frequency: 440, type: "sine" };
+    const position = { x: 0, y: 0 };
+
+    set({ nodes: [...get().nodes, { id, type, data, position }] });
+  },
 }));

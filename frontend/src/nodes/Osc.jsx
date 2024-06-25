@@ -45,7 +45,7 @@ export default function Osc({ id, data }) {
         </select>
       </label>
 
-      <Handle className={tw("w-2 h-2")} type="source" position="bottom" />
+      <Handle className={tw("w-2 h-2")} type="source" position="right" />
     </div>
   );
 }

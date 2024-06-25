@@ -10,12 +10,14 @@ import { useStore } from "./store";
 import { tw } from "twind";
 import Osc from "./nodes/Osc";
 import Amp from "./nodes/Amp";
+import Mol from "./nodes/Mol";
 
 import "reactflow/dist/style.css";
 
 const nodeTypes = {
   osc: Osc,
   amp: Amp,
+  mol: Mol,
 };
 
 const selector = (store) => ({

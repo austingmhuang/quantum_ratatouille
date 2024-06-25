@@ -16,6 +16,12 @@ export const useStore = create((set, get) => ({
       data: { gain: 0.5 },
       position: { x: -100, y: 100 },
     },
+    {
+      id: "mol",
+      type: "mol",
+      data: { gain: 0.5 },
+      position: { x: -100, y: 200 },
+    },
   ],
   edges: [{ id: "osc->amp", source: "osc", target: "amp" }],
 

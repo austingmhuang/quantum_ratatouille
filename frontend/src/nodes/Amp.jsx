@@ -4,7 +4,7 @@ import { shallow } from "zustand/shallow";
 import { tw } from "twind";
 import { useStore } from "../store";
 
-        var selector = (id) => (store) => ({
+const selector = (id) => (store) => ({
   setGain: (e) => store.updateNode(id, { gain: +e.target.value }),
 });
 

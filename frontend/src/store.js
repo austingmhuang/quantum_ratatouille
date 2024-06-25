@@ -12,7 +12,7 @@ import {
 } from "./audio";
 
 export const useStore = create((set, get) => ({
-        nodes: [
+  nodes: [
     {
       id: "osc",
       type: "osc",

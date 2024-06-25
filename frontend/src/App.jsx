@@ -46,7 +46,7 @@ export default function App() {
       onConnect={store.addEdge}
       fitView
     >
-      <Panel className={tw("space-x-4")} position="top-right">
+              <Panel className={tw("space-x-4")} position="top-right">
         <button
           className={tw("px-2 py-1 rounded bg-white shadow")}
           onClick={store.addOsc}

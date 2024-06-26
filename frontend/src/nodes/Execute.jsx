@@ -15,9 +15,7 @@ export default function Execute({ id, data }) {
     <div className={tw("rounded-md bg-white shadow-xl")}>
       <Handle className={tw("w-2 h-2")} type="target" position="left" />
       <p
-        className={tw(
-          "rounded-t-md px-2 py-1 bg-green  -500 text-white text-sm",
-        )}
+        className={tw("rounded-t-md px-2 py-1 bg-green-500 text-white text-sm")}
       >
         Execute
       </p>

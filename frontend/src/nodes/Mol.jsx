@@ -13,8 +13,6 @@ export default function Mol({ id, data }) {
     onDrop: (files) => updateNode(id, files),
   });
 
-  console.log(data[0].path);
-
   return (
     <div className={tw("rounded-md bg-white shadow-xl")}>
       <p className={tw("rounded-t-md px-2 py-1 bg-blue-500 text-white text-m")}>
@@ -29,7 +27,6 @@ export default function Mol({ id, data }) {
           })}
         >
           <input {...getInputProps()} />
-          <p>Molecule.xyz</p>
           <aside>
             <p>{data[0].path}</p>
           </aside>

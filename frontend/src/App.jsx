@@ -11,6 +11,10 @@ import { tw } from "twind";
 import Osc from "./nodes/Osc";
 import Amp from "./nodes/Amp";
 import Mol from "./nodes/Mol";
+import Mapper from "./nodes/Mapper";
+import Measurement from "./nodes/Measurement";
+import HamiltonianBuilder from "./nodes/HamiltonianBuilder";
+import Execute from "./nodes/Execute";
 
 import "reactflow/dist/style.css";
 
@@ -18,6 +22,10 @@ const nodeTypes = {
   osc: Osc,
   amp: Amp,
   mol: Mol,
+  mapper: Mapper,
+  measurement: Measurement,
+  hamiltonianBuilder: HamiltonianBuilder,
+  execute: Execute,
 };
 
 const selector = (store) => ({

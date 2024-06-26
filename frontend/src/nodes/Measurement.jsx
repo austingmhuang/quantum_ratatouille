@@ -8,7 +8,7 @@ const selector = (id) => (store) => ({
   setType: (e) => store.updateNode(id, { type: e.target.value }),
 });
 
-export default function Osc({ id, data }) {
+export default function Measurement({ id, data }) {
   const { setType } = useStore(selector(id), shallow);
 
   return (
@@ -17,14 +17,14 @@ export default function Osc({ id, data }) {
       <p
         className={tw("rounded-t-md px-2 py-1 bg-pink-500 text-white text-sm")}
       >
-        Hamiltonian
+        Measurement
       </p>
       <hr className={tw("border-gray-200 mx-2")} />
       <label className={tw("flex flex-col px-2 pt-1 pb-4")}>
-        <p className={tw("text-xs font-bold mb-2")}>Basis Set</p>
+        <p className={tw("text-xs font-bold mb-2")}>Measurement</p>
         <select className="nodrag" value={data.type} onChange={setType}>
-          <option value="sto3g">STO3G</option>
-          <option value="631g">631G</option>
+          <option value="expval">Expectation Value</option>
+          <option value="counts">Counts</option>
         </select>
       </label>
 

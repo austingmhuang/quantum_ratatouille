@@ -36,12 +36,6 @@ export default [
     position: { x: 400, y: 0 },
   },
   {
-    id: "7",
-    type: "execute",
-    data: { type: "default.qubit", val: null },
-    position: { x: 600, y: 0 },
-  },
-  {
     id: "8",
     type: "matrix",
     data: [{ matrix: [1, 1] }],

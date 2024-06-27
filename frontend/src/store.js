@@ -31,7 +31,7 @@ export const useStore = create((set, get) => ({
     {
       id: "5",
       type: "execute",
-      data: { type: "default.qubit" },
+      data: { type: "default.qubit", val: null },
       position: { x: 600, y: 200 },
     },
   ],
@@ -41,6 +41,10 @@ export const useStore = create((set, get) => ({
     { id: "3->4", source: "3", target: "4" },
     { id: "4->5", source: "4", target: "5" },
   ],
+  fetch: async (e) => {
+    const response = await fetch(e);
+    set({ nodes: await response.json() });
+  },
 
   onNodesChange(changes) {
     set({

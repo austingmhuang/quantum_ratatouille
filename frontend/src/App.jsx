@@ -16,6 +16,7 @@ import Measurement from "./nodes/Measurement";
 import HamiltonianBuilder from "./nodes/HamiltonianBuilder";
 import Execute from "./nodes/Execute";
 import Matrix from "./nodes/Matrix";
+import StatePrep from "./nodes/StatePrep";
 import QPE from "./nodes/QPE";
 
 import "reactflow/dist/style.css";
@@ -30,6 +31,7 @@ const nodeTypes = {
   execute: Execute,
   matrix: Matrix,
   qpe: QPE,
+  statePrep: StatePrep,
 };
 
 const selector = (store) => ({

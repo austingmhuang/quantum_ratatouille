@@ -36,7 +36,6 @@ export default function Execute({ id, data }) {
       alert(data.message);
     } else {
       const data = await response.json();
-      console.log(data.val);
       setValue(data.val);
     }
   };

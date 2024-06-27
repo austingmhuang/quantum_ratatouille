@@ -55,13 +55,13 @@ export default function App() {
           className={tw("px-2 py-1 rounded bg-white shadow")}
           onClick={store.addOsc}
         >
-          Add Osc
+          Add
         </button>
         <button
           className={tw("px-2 py-1 rounded bg-white shadow")}
           onClick={store.addAmp}
         >
-          Add Amp
+          Add Node
         </button>
       </Panel>
       <Background />

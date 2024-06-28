@@ -25,8 +25,8 @@ export default function Measurement({ id, data }) {
         <select className="nodrag" value={data.type} onChange={setType}>
           <option value="expval">Expectation Value</option>
           <option value="counts">Counts</option>
-          <option value="counts">Samples</option>
-          <option value="counts">Variance</option>
+          <option value="samples">Samples</option>
+          <option value="variance">Variance</option>
         </select>
       </label>
 

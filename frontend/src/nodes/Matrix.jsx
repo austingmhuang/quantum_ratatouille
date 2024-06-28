@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useCallback } from "react";
 import { Handle } from "reactflow";
 import { shallow } from "zustand/shallow";
 import { tw } from "twind";
@@ -21,7 +21,7 @@ export default function Matrix({ id, data }) {
           className="nodrag"
           placeholder={"Paste your matrix here..."}
           style={{ padding: "10px", fontSize: "20px" }}
-          value={JSON.stringify(data.matrix)}
+          value={data.matrix}
           onChange={setMatrix}
         />
       </div>

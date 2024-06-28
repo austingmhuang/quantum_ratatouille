@@ -2,7 +2,7 @@ export default [
   {
     id: "1",
     type: "matrix",
-    data: [{ matrix: [1, 1] }],
+    data: { matrix: "" },
     position: { x: -200, y: 200 },
   },
   {
@@ -38,7 +38,7 @@ export default [
   {
     id: "8",
     type: "matrix",
-    data: [{ matrix: [1, 1] }],
+    data: { matrix: "" },
     position: { x: -200, y: 0 },
   },
   {

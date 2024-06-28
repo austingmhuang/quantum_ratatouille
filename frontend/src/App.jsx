@@ -19,6 +19,7 @@ import Matrix from "./nodes/Matrix";
 import StatePrep from "./nodes/StatePrep";
 import QPE from "./nodes/QPE";
 import TrotterProduct from "./nodes/TrotterProduct";
+import QSVT from "./nodes/QSVT";
 
 import "reactflow/dist/style.css";
 
@@ -34,6 +35,7 @@ const nodeTypes = {
   qpe: QPE,
   statePrep: StatePrep,
   trotterProduct: TrotterProduct,
+  qsvt: QSVT,
 };
 
 const selector = (store) => ({

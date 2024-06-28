@@ -1,5 +1,5 @@
 # Disclaimer
-This project is a proof of concept.
+This project is a proof of concept (but the frontend works! ...mostly).
 
 # Quantum Ratatouille
 Much like the rat in the hat, you are the real quantum chef, pulling the strings behind the scenes. 

@@ -1,5 +1,3 @@
-
-
 def process_graph(nodes, edges):
     """Convert the list of nodes and edges to a dictionary
     structure. 
@@ -33,11 +31,8 @@ def process_graph(nodes, edges):
 
         # tar dictionary: node_id --> list of target node ids + handles
         if get_tar_dict.get(s) is None:
-            get_src_dict[s] = [(t, th)]
+            get_tar_dict[s] = [(t, th)]
         else: 
-            get_src_dict[s].append((t, th)) 
+            get_tar_dict[s].append((t, th)) 
 
     return processed_nodes, get_src_dict, get_tar_dict
-
-
-

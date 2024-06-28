@@ -1,3 +1,5 @@
+import ast
+
 import pennylane as qml
 from pennylane import numpy as np
 
@@ -15,16 +17,16 @@ def generate_circuit(nodes, *args, **kwargs):
     operations = [] 
     measurements = [] 
 
-    mat1 = np.array(nodes["1"]["data"][0]["matrix"])  # top-left matrix node 1 
-    mat2 = np.array(nodes["8"]["data"][0]["matrix"])  # bottom-left matrix node 8
+    mat1 = np.array(ast.literal_eval(nodes["1"]["data"]["matrix"]))  # top-left matrix node 1 
+    mat2 = np.array(ast.literal_eval(nodes["8"]["data"]["matrix"]))  # bottom-left matrix node 8
 
     # State Prep: 
     sp_op, sp_w = get_state_prep(mat2)  # state prep node 9
     operations.append(sp_op)
 
     # Trotter product: 
-    order = nodes["2"]["data"]["order"]
-    num_steps = nodes["2"]["data"]["num_steps"]  # trotter node 2
+    order = nodes["9"]["data"]["order"]
+    num_steps = nodes["9"]["data"]["steps"]  # trotter node 2
 
     tp_op, tp_w = get_tp(mat1, order, num_steps)
 

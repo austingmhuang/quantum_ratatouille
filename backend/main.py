@@ -5,7 +5,8 @@ from flask import request, jsonify
 import pennylane as qml
 import matplotlib.pyplot as plt
 
-# from .. import generate_circuit, process_graph
+from utils import process_graph
+from circuit_builder import generate_circuit
 
 
 @app.route("/execute_circuit", methods=["POST"])
@@ -18,10 +19,11 @@ def execute_circuit():
             jsonify({"message": "Where nodes or edges?"}),
             400,
         )
-    # processed_nodes, get_src_dict, get_tar_dict = process_graph(nodes, edges)
-    # c = generate_circuit(processed_nodes, get_src_dict, get_tar_dict)
-    c = generate_circuit()
+    processed_nodes, get_src_dict, get_tar_dict = process_graph(nodes, edges)
 
+    print(processed_nodes)
+
+    c = generate_circuit(processed_nodes, get_src_dict, get_tar_dict)
     val = c()
 
     script_dir = os.path.dirname(__file__)
@@ -30,18 +32,9 @@ def execute_circuit():
 
     fig, _ = qml.draw_mpl(c)()
     fig.savefig(abs_file_path)
+    plt.close(fig)
 
     return jsonify({"val": val}), 200
-
-
-def generate_circuit(*args, **kwargs):
-    @qml.qnode(qml.device("default.qubit"))
-    def circ():
-        qml.Hadamard(0)
-        qml.CNOT([0,1])
-        return qml.expval(qml.Z(1))
-    
-    return circ
 
 
 if __name__ == "__main__":

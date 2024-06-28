@@ -1,0 +1,5 @@
+pennylane
+Flask
+Flask-cors
+Flask-SQLAlchemy
+matplotlib

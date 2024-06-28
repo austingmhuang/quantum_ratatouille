@@ -44,7 +44,7 @@ export default [
   {
     id: "9",
     type: "trotterProduct",
-    data: { error: 0 },
+    data: { order: 2, steps: 10 },
     position: { x: 0, y: 0 },
   },
 ];

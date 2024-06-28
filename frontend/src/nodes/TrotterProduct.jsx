@@ -5,11 +5,12 @@ import { tw } from "twind";
 import { useStore } from "../store";
 
 const selector = (id) => (store) => ({
-  setError: (e) => store.updateNode(id, { error: e.target.value }),
+  setOrder: (e) => store.updateNode(id, { order: e.target.value }),
+  setSteps: (e) => store.updateNode(id, { steps: e.target.value }),
 });
 
 export default function TrotterProduct({ id, data }) {
-  const { setError } = useStore(selector(id), shallow);
+  const { setSteps, setOrder } = useStore(selector(id), shallow);
 
   return (
     <div className={tw("rounded-md bg-white shadow-xl")}>
@@ -20,17 +21,31 @@ export default function TrotterProduct({ id, data }) {
         TrotterProduct
       </p>
       <label className={tw("flex flex-col px-2 pt-1 pb-4")}>
-        <p className={tw("text-xs font-bold mb-2")}>Error</p>
+        <p className={tw("text-xs font-bold mb-2")}>Steps</p>
         <input
           className="nodrag"
           type="range"
           min="0"
-          max="1"
-          step="0.01"
-          value={data.error}
-          onChange={setError}
+          max="100"
+          step="1"
+          value={data.steps}
+          onChange={setSteps}
         />
-        <p className={tw("text-right text-xs")}>{data.error}</p>
+        <p className={tw("text-right text-xs")}>{data.steps}</p>
+      </label>
+      <hr className={tw("border-gray-200 mx-2")} />
+      <label className={tw("flex flex-col px-2 pt-1 pb-4")}>
+        <p className={tw("text-xs font-bold mb-2")}>Order</p>
+        <input
+          className="nodrag"
+          type="range"
+          min="2"
+          max="6"
+          step="2"
+          value={data.order}
+          onChange={setOrder}
+        />
+        <p className={tw("text-right text-xs")}>{data.order}</p>
       </label>
 
       <Handle className={tw("w-2 h-2")} type="source" position="right" />

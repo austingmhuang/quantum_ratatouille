@@ -2,8 +2,8 @@ import { applyNodeChanges, applyEdgeChanges, addEdge } from "reactflow";
 import { nanoid } from "nanoid";
 import { create } from "zustand";
 
-import demoNodes from "./demos/qsvtNodes";
-import demoEdges from "./demos/qsvtEdges";
+import demoNodes from "./demos/qpeNodes";
+import demoEdges from "./demos/qpeEdges";
 
 export const useStore = create((set, get) => ({
   nodes: demoNodes,

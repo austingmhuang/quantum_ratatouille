@@ -23,10 +23,12 @@ export default function Measurement({ id, data }) {
       <label className={tw("flex flex-col px-2 pt-1 pb-4")}>
         <p className={tw("text-xs font-bold mb-2")}>Measurement</p>
         <select className="nodrag" value={data.type} onChange={setType}>
+          <option value="probs">Probabilities</option>
           <option value="expval">Expectation Value</option>
           <option value="counts">Counts</option>
           <option value="samples">Samples</option>
           <option value="variance">Variance</option>
+          <option value="state">State</option>
         </select>
       </label>
 

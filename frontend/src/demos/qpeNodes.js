@@ -20,7 +20,7 @@ export default [
   {
     id: "4",
     type: "measurement",
-    data: { type: "expval" },
+    data: { type: "probs" },
     position: { x: 400, y: 200 },
   },
   {
@@ -32,7 +32,7 @@ export default [
   {
     id: "6",
     type: "measurement",
-    data: { type: "counts" },
+    data: { type: "state" },
     position: { x: 400, y: 0 },
   },
   {

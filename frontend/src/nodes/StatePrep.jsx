@@ -22,10 +22,6 @@ export default function StatePrep({ id, data }) {
       <hr className={tw("border-gray-200 mx-2")} />
       <label className={tw("flex flex-col px-2 pt-1 pb-4")}>
         <p className={tw("text-xs font-bold mb-2")}>State Prep</p>
-        <select className="nodrag" value={data.type} onChange={setType}>
-          <option value="jw">Jordan-Wigner</option>
-          <option value="bk">Brayvi-Kitaev</option>
-        </select>
       </label>
 
       <Handle className={tw("w-2 h-2")} type="source" position="right" />

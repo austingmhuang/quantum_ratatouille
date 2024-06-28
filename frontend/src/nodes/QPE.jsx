@@ -5,11 +5,11 @@ import { tw } from "twind";
 import { useStore } from "../store";
 
 const selector = (id) => (store) => ({
-  setType: (e) => store.updateNode(id, { type: e.target.value }),
+  setError: (e) => store.updateNode(id, { error: e.target.value }),
 });
 
 export default function QPE({ id, data }) {
-  const { setType } = useStore(selector(id), shallow);
+  const { setError } = useStore(selector(id), shallow);
 
   return (
     <div className={tw("rounded-md bg-white shadow-xl")}>
@@ -30,13 +30,18 @@ export default function QPE({ id, data }) {
       >
         QPE
       </p>
-      <hr className={tw("border-gray-200 mx-2")} />
       <label className={tw("flex flex-col px-2 pt-1 pb-4")}>
-        <p className={tw("text-xs font-bold mb-2")}>Mapper</p>
-        <select className="nodrag" value={data.type} onChange={setType}>
-          <option value="jw">Jordan-Wigner</option>
-          <option value="bk">Brayvi-Kitaev</option>
-        </select>
+        <p className={tw("text-xs font-bold mb-2")}>Error</p>
+        <input
+          className="nodrag"
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value={data.error}
+          onChange={setError}
+        />
+        <p className={tw("text-right text-xs")}>{data.error}</p>
       </label>
 
       <Handle

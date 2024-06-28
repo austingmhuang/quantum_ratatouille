@@ -14,7 +14,7 @@ export default [
   {
     id: "3",
     type: "qpe",
-    data: { epsilon: 0.1 },
+    data: { error: 0.1 },
     position: { x: 200, y: 100 },
   },
   {
@@ -43,8 +43,8 @@ export default [
   },
   {
     id: "9",
-    type: "statePrep",
-    data: { type: "statePrep" },
+    type: "trotterProduct",
+    data: { error: 0 },
     position: { x: 0, y: 0 },
   },
 ];
